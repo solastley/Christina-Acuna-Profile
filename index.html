@@ -190,6 +190,15 @@
             </div>
         </div>
         <div class="container" style="border-bottom: 1px solid #ddd; padding-bottom: 100px">
+
+        <!-- BEGINNNING OF COMMENTS FOR ADDING NEW DIGITAL ART IMAGE -->
+        <!-- To Add a New Digital Image: 
+            1. Copy all of the code between these comments and the next designated comment below.
+            2. Paste the code somewhere between the other digital image code chunks (or below them all).
+            3. Locate the section of the code that says '<img src="images/show1.jpg"' and change "show1.jpg" to the name of the image file you wish to add.
+            4. Make sure your image file is placed into the correct location. To do this, move the image file into the folder called "images" which is located in the main folder called "website".
+            5. Update the index.html file and add the image to the images folder on FutureQuest. -->
+
             <div class="row art_info">
                 <div class="col-md-6 text-center">
                     <div class="single_image">
@@ -205,6 +214,9 @@
                     </div>
                 </div>
             </div>
+
+        <!-- END OF COMMENTS FOR ADDING NEW DIGITAL ART IMAGE -->
+
             <div class="row art_info">
                 <div class="col-md-6 text-center">
                     <div class="single_image">
@@ -388,7 +400,7 @@
         </div>
     </section>
 
-    <section class="work_area" id="PHOTOGRAPHY"
+    <section class="work_area" id="PHOTOGRAPHY">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -400,6 +412,43 @@
                 </div>
             </div>
         </div>
+
+        <!-- BEGINNING OF COMMENTS FOR ADDING NEW PHOTOGRAPH -->
+        <!-- Adding a photograph is a bit more complicated than adding a digital image. If you have any trouble doing this, feel free to contact me and I can walk you through it step-by-step, or I can even do it for you a few times until you get the hang of it. I'll try, however, to make it as simple as possible for you.
+
+        Here's some background information you should understand before attempting to do this. The framework you are using for this code is called Bootstrap. In this framework, you can "build" new sections of a web page by adding what are called "rows" and "cols". These rows and cols function just like rows and cols in any other table, and these are contained within what is called a "container". Each div has a "class" attribute which designates whether it is a row, a col, or a container. If you look at the pseudo-code below for an example, you can get a better idea of what I'm talking about:
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>This</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Is</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Cool</p>
+                </div>
+            </div>
+        </div>
+
+        The code above this ^^^ would create a section on the webpage that looks something like this, but the outlines of the sections would be invisible:
+
+        _____________ _____________ _____________
+        |            |             |             |
+        |    This    |      Is     |    Cool     |
+        |____________|_____________|_____________|
+
+        Now, note that inside each col div, there are <p></p> tags. These tags are called "paragraphs" and you can put text between them that you want to show up on the web page in that location. In the example above, I have the words "This", "Is", and "Cool" inside the tags. Additionally, there are different tags called "image" tags that allow you to place images in a specific place on a web page. In order to add a new photograph, you'll be using image tags inside your divs.
+
+        Something you may have noticed about the col tags is that their class attribute isn't simply "col". It is "col-md-4". Read the following carefully because it's very important to understanding how all this works. In the Bootstrap framework, you can divide a row into up to 12 different cols. Some divs that you create may span multiple columns in a row. In the example above, each of the col divs spans 4 columns, designated by the class="col-md-4". If you wanted a col div to span 8 columns, for example, you would make its class attribute equal to "col-md-8". Don't worry about why the "md" is in there, it's unimportant for your purposes. Just know that it must be included.
+
+        In the example above, there are three col divs inside the row div. Each col div spans 4 columns, for a total of 12 columns. This is consistent with how the Bootstrap framework works. Here's where the magic happpens: You can place any combination of col divs inside a row div, as long as the number of cols that they span in total is equal to 12. So, inside a row, you could have one col div that spans 8 columns and one col div that spans 4 columns for a total of 12 columns. Inside another row, you could have two col divs that each span 6 columns, for a total of 12 columns. Inside another row, you could have twelve col divs that each span 1 column, for a total of 12 columns. You get the idea. If you take a look at the photographs that are already on the website, it's easy to see the structure of how this works.
+
+        Now, there is one more important detail to know about. Col divs can actually contain row divs, and those rows can contain other cols. This can continue indefinitely, so cols can be divided up into smaller and smaller sections. You can see on your website that some photographs seem to span two rows. This is because the cols adjacent to the cols containing these photographs actually contain two rows.
+
+        -->
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 no_padding">
@@ -1102,20 +1151,9 @@
     </div>
 </footer>
 
-
-
-
-
-
-
-
-
-
-
 <!-- =========================
      SCRIPTS 
 ============================== -->
-
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -1124,9 +1162,6 @@
     <script src="js/wow.js"></script>
     <script src="js/script.js"></script>
     <script src="js/contact_me.js"</script>
-
-
-
 
 </body>
 
