@@ -416,7 +416,7 @@
         <!-- BEGINNING OF COMMENTS FOR ADDING NEW PHOTOGRAPH -->
         <!-- Adding a photograph is a bit more complicated than adding a digital image. If you have any trouble doing this, feel free to contact me and I can walk you through it step-by-step, or I can even do it for you a few times until you get the hang of it. I'll try, however, to make it as simple as possible for you.
 
-        Here's some background information you should understand before attempting to do this. The framework you are using for this code is called Bootstrap. In this framework, you can "build" new sections of a web page by adding what are called "rows" and "cols". These rows and cols function just like rows and cols in any other table, and these are contained within what is called a "container". Each div has a "class" attribute which designates whether it is a row, a col, or a container. If you look at the pseudo-code below for an example, you can get a better idea of what I'm talking about:
+        Here's some background information you should understand before attempting to do this. The framework you are using for this code is called Bootstrap. In this framework, you can "build" new sections of a web page by adding what are called "rows" and "cols". These rows and cols function just like rows and columns in any other table, and these are contained within what is called a "container". Each div has a "class" attribute which designates whether it is a row, a col, or a container. If you look at the pseudo-code below for an example, you can get a better idea of what I'm talking about:
 
         <div class="container">
             <div class="row">
@@ -433,7 +433,6 @@
         </div>
 
         The code above this ^^^ would create a section on the webpage that looks something like this, but the outlines of the sections would be invisible:
-
         _____________ _____________ _____________
         |            |             |             |
         |    This    |      Is     |    Cool     |
@@ -445,9 +444,42 @@
 
         In the example above, there are three col divs inside the row div. Each col div spans 4 columns, for a total of 12 columns. This is consistent with how the Bootstrap framework works. Here's where the magic happpens: You can place any combination of col divs inside a row div, as long as the number of cols that they span in total is equal to 12. So, inside a row, you could have one col div that spans 8 columns and one col div that spans 4 columns for a total of 12 columns. Inside another row, you could have two col divs that each span 6 columns, for a total of 12 columns. Inside another row, you could have twelve col divs that each span 1 column, for a total of 12 columns. You get the idea. If you take a look at the photographs that are already on the website, it's easy to see the structure of how this works.
 
-        Now, there is one more important detail to know about. Col divs can actually contain row divs, and those rows can contain other cols. This can continue indefinitely, so cols can be divided up into smaller and smaller sections. You can see on your website that some photographs seem to span two rows. This is because the cols adjacent to the cols containing these photographs actually contain two rows.
+        Now, there is one more important detail to know about. Col divs can actually contain row divs, and those rows can contain other cols. This can continue indefinitely, so cols can be divided up into smaller and smaller sections. You can see on your website that some photographs seem to span two rows. This is because the cols adjacent to the cols containing these photographs actually contain two rows. Here is some pseudo-code to give you an example of how this is done:
 
-        -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p></p>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        The code above this ^^^ would create a section on the webpage that looks something like this, but the outlines of the sections would be invisible:
+        ____________________ ____________________
+        |                   |                    |
+        |                   |         Is         |
+        |       This        |____________________|
+        |                   |                    |
+        |                   |        Cool        |
+        |___________________|____________________|
+
+        So in the example above, you've got two outer col divs which each span 6 columns, for a total of 12 columns. However, within the col div on the right, you have two row divs. Each of these rows then contains a col div which spans 12 columns (or the full length of the outer col div on the right).
+
+        That is a summary of how this works. It may take some getting used to. Try to keep it simple at first. It's notably more difficult to make photos that span more than one row, so maybe try not to add of those until you get the hang of things. Below these instructions is the code for the photograph section of the website. To make things easier, I'll put little diagrams of what certain sections of the code will look like on the website. This way, you should be able to just copy and paste most things and simply change the image names inside the <img> tags.
+
+        END OF COMMENTS FOR ADDING NEW PHOTOGRAPH-->
 
         <div class="container-fluid">
             <div class="row">
@@ -484,6 +516,17 @@
                     </div>
                 </div>
             </div>
+
+            <!-- BEGINNING OF FORMAT 1 -->
+            <!-- Below is the code for adding images in the following format:
+
+            _____________ _____________ __________________________
+            |            |             |                          |
+            |    This    |      Is     |           Cool           |
+            |____________|_____________|__________________________|
+
+            -->
+
             <div class="row pad_top">
                 <div class="col-md-3 no_padding">
                     <div class="single_image">
@@ -510,6 +553,19 @@
                     </div>
                 </div>
             </div>
+
+            <!-- =========================================== END OF FORMAT 1 ===========================================-->
+
+            <!-- BEGINNING OF FORMAT 2 -->
+            <!-- Below is the code for adding images in the following format:
+
+            _______________________________________ ____________
+            |                        |             |            |
+            |         This           |      Is     |    Cool    |
+            |________________________|_____________|____________|
+
+            -->
+
             <div class="row pad_top">
                 <div class="col-md-6 no_padding">
                     <div class="single_image">
@@ -536,6 +592,19 @@
                     </div>
                 </div>
             </div>
+
+            <!-- =========================================== END OF FORMAT 2 ===========================================-->
+
+            <!-- BEGINNING OF FORMAT 3 -->
+            <!-- Below is the code for adding images in the following format:
+
+            _____________ _____________ ____________ _____________
+            |            |             |            |            |
+            |    This    |      Is     |    Cool    |   Right?   |
+            |____________|_____________|____________|____________|
+
+            -->
+
             <div class="row pad_top">
                 <div class="col-md-3 no_padding">
                     <div class="single_image">
@@ -570,6 +639,9 @@
                     </div>
                 </div>
             </div>
+
+            <!-- =========================================== END OF FORMAT 3 ===========================================-->
+
             <div class="row pad_top">
                 <div class="col-md-6 no_padding">
                     <div class="single_image">
@@ -596,6 +668,20 @@
                     </div>
                 </div>
             </div>
+
+            <!-- BEGINNING OF FORMAT 4 -->
+            <!-- Below is the code for adding images in the following format:
+
+            _____________ _____________ ____________ _____________
+            |            |             |            |             |
+            |    This    |      Is     |            |     Cool    |
+            |____________|_____________|   Really   |_____________|
+            |            |             |            |             |
+            |    This    |      Is     |            |     Cool    |
+            |____________|_____________|____________|_____________|
+
+            -->
+
             <div class="row pad_top">
                 <div class="col-md-6">
                     <div class="row">
@@ -666,6 +752,22 @@
                     </div>
                 </div>
             </div>
+
+            <!-- =========================================== END OF FORMAT 4 ===========================================-->
+
+            <!-- BEGINNING OF FORMAT 5 -->
+            <!-- Below is the code for adding images in the following format:
+
+            __________________________ ____________ _____________
+            |                         |            |             |
+            |         Awesome         |   Right?   |             |
+            |_________________________|____________|     Cool    |
+            |            |            |            |             |
+            |    This    |     Is     |   Really   |             |
+            |____________|____________|____________|_____________|
+
+            -->
+
             <div class="row pad_top">
                 <div class="col-md-6">
                     <div class="row">
@@ -728,6 +830,9 @@
                     </div>
                 </div>
             </div>
+
+            <!-- =========================================== END OF FORMAT 5 ===========================================-->
+
             <div class="row pad_top">
                 <div class="col-md-6 no_padding">
                     <div class="single_image">
@@ -812,24 +917,12 @@
                                 <hr class="liner2"></hr>
                             </div>
                             <div class="owl-carousel">
-                                <div class="single_testimonial text-center">
-                                    <div class="row">
-                                        <div class="col-md-4 col-md-offset-2 text-center">
-                                            <h4>Bleached</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 col-md-offset-2 text-center">
-                                            <p>White knight, with a white beard,<br/>in a white coat, and a white hood,<br/>
-                                            rode in on a white horse, dealing out white sheets<br/>to be torn apart into white flags.<br/><br/>
-                                            White men can’t jump,<br/>but  they can sure shoot.<br/></br>Wave that flag proudly, they teach.<br/>
-                                            Our color, they impeach.<br/>Jesus, they preach.<br/></br>Hyphen American,<br/>Deciphering a mirror can defy the error, can<br/>denounce the terror<br/>of another pallbearer.</p>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <p>“Spic, I love your hair</br>it’s so curly, so</br>strong, so shiny.</br>Is it your real hair?”</br>“But it’s too black, you see,</br>too set in its own tone.</br>And your ass too round,</br>your lips too full.”</br></br>This integration is</br>Disintegration.</br></br>Stick to the coffee ground, <i>suelo</i>.</br>Smell the Bustelo.</br><i>Derrite caremelo.</br></br>Acción afirmativa fue tu anzuelo,</br>sincero, sin celo.</br>Pierdas consuelo,</br>Pero ganas recelo.</i></p>
-                                        </div>
-                                    </div>
-                                </div>
+
+                            <!-- BEGINNING OF INSTRUCTIONS FOR ADDING POEMS -->
+                            <!-- Adding a poem is fairly simple. Just copy and paste the text underneath these comments in between two of the other poem divs. Replace the title of the poem with the new title, and the text of the poem with new text. Remember that all text must be inside a pair of <p></p> tags. Every time you want to start a new line in a poem, insert the  "<br/>" tag. Some poems may have longer lines than others. You can space the poems out differently by using differently sized col divs. Feel free to mess with the sizes and experiment, and also contact me with any questions. Adding a poem is a fairly tedious process because you must copy each line into the code. -->
+
+                            <!-- Copy and paste the code between this comment and the next one to add a new poem -->
+
                                 <div class="single_testimonial text-center">
                                     <div class="row">
                                         <div class="col-md-5 col-md-offset-1 text-center">
@@ -886,6 +979,26 @@
                                                 </br>
                                                 laughing at me for believing that he ever loved me.
                                             </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <!-- Copy and paste the code between this comment and the previous one to add a new poem -->
+
+                                <div class="single_testimonial text-center">
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-2 text-center">
+                                            <h4>Bleached</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-2 text-center">
+                                            <p>White knight, with a white beard,<br/>in a white coat, and a white hood,<br/>
+                                            rode in on a white horse, dealing out white sheets<br/>to be torn apart into white flags.<br/><br/>
+                                            White men can’t jump,<br/>but  they can sure shoot.<br/></br>Wave that flag proudly, they teach.<br/>Our color, they impeach.<br/>Jesus, they preach.<br/></br>Hyphen American,<br/>Deciphering a mirror can defy the error, can<br/>denounce the terror<br/>of another pallbearer.</p>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <p>“Spic, I love your hair</br>it’s so curly, so</br>strong, so shiny.</br>Is it your real hair?”</br>“But it’s too black, you see,</br>too set in its own tone.</br>And your ass too round,</br>your lips too full.”</br></br>This integration is</br>Disintegration.</br></br>Stick to the coffee ground, <i>suelo</i>.</br>Smell the Bustelo.</br><i>Derrite caremelo.</br></br>Acción afirmativa fue tu anzuelo,</br>sincero, sin celo.</br>Pierdas consuelo,</br>Pero ganas recelo.</i></p>
                                         </div>
                                     </div>
                                 </div>
